@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace App\Handler\Form;
 
@@ -48,6 +49,8 @@ class AddComment extends Form implements InputFilterProviderInterface
 
     /**
      * @inheritDoc
+     *
+     * @see InputFilterProviderInterface::getInputFilterSpecification()
      */
     public function getInputFilterSpecification() : array
     {

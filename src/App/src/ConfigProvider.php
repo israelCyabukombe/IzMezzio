@@ -4,7 +4,14 @@ declare(strict_types=1);
 
 namespace App;
 
-use Whoops\Handler\Handler;
+use App\Handler\CsrfPage;
+use App\Handler\CsrfPageFactory;
+use App\Handler\Form\AddComment;
+use App\Handler\Form\AddCommentFactory;
+use App\Handler\HomePageHandler;
+use App\Handler\HomePageHandlerFactory;
+use App\Handler\XssPage;
+use App\Handler\XssPageFactory;
 
 /**
  * The configuration provider for the App module
@@ -37,7 +44,10 @@ class ConfigProvider
                 Handler\PingHandler::class => Handler\PingHandler::class,
             ],
             'factories'  => [
-                Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
+                HomePageHandler::class => HomePageHandlerFactory::class,
+                CsrfPage::class => CsrfPageFactory::class,
+                XssPage::class => XssPageFactory::class,
+                AddComment::class =>AddCommentFactory::class,
             ],
         ];
     }

@@ -22,6 +22,7 @@ $aggregator = new ConfigAggregator([
     \Mezzio\Router\LaminasRouter\ConfigProvider::class,
     \Laminas\Router\ConfigProvider::class,
     \Laminas\Validator\ConfigProvider::class,
+    \Laminas\I18n\ConfigProvider::class,
     // Include cache configuration
     new ArrayProvider($cacheConfig),
 

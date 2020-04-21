@@ -16,12 +16,12 @@ class XssPage implements RequestHandlerInterface
     /**
      * @var TemplateRendererInterface
      */
-    private $renderer;
+    protected $renderer;
 
     /**
      * @var AddComment
      */
-    private $commentForm;
+    protected $commentForm;
 
     /**
      * XssPage constructor.
@@ -32,8 +32,7 @@ class XssPage implements RequestHandlerInterface
     public function __construct(
         TemplateRendererInterface $renderer,
         AddComment $commentForm
-    )
-    {
+    ){
         $this->renderer    = $renderer;
         $this->commentForm = $commentForm;
     }
@@ -46,7 +45,7 @@ class XssPage implements RequestHandlerInterface
             'app::xss-page',
             [
                 'title' => 'XSS Demo',
-                'form' => $this->commentForm,
+                'commentForm' => $this->commentForm,
             ] // parameters to pass to template
         ));
     }

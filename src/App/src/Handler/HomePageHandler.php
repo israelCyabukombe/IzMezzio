@@ -6,15 +6,13 @@ namespace App\Handler;
 
 use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\Response\JsonResponse;
-use Mezzio\LaminasView\LaminasViewRenderer;
 use Mezzio\Plates\PlatesRenderer;
-use Mezzio\Router;
+use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
 use Mezzio\Twig\TwigRenderer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Mezzio\Router\RouterInterface;
 
 /**
  * Class HomePageHandler
@@ -22,25 +20,25 @@ use Mezzio\Router\RouterInterface;
  */
 class HomePageHandler implements RequestHandlerInterface
 {
+    /** @var string */
+    private $containerName;
+
     /** @var RouterInterface */
     private $router;
 
-    /** @var TemplateRendererInterface */
+    /** @var null|TemplateRendererInterface */
     private $template;
 
-    /**
-     * HomePageHandler constructor.
-     *
-     * @param RouterInterface $router
-     * @param TemplateRendererInterface|null $template
-     */
     public function __construct(
+        string $containerName,
         RouterInterface $router,
-        TemplateRendererInterface $template
+        ?TemplateRendererInterface $template = null
     ) {
+        $this->containerName = $containerName;
         $this->router        = $router;
         $this->template      = $template;
     }
+
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         if ($this->template === null) {

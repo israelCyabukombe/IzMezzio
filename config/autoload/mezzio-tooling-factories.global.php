@@ -13,9 +13,10 @@ declare(strict_types=1);
 return [
     'dependencies' => [
         'factories' => [
-            App\Handler\CsrfPage::class => App\Handler\CsrfPageFactory::class,
-            App\Handler\XssPage::class => App\Handler\XssPageFactory::class,
-            App\Handler\Form\AddComment::class => App\Handler\Form\AddCommentFactory::class,
+//            App\Handler\HomePageHandler::class => App\Handler\HomePageHandlerFactory::class,
+//            App\Handler\CsrfPage::class => App\Handler\CsrfPageFactory::class,
+//            App\Handler\XssPage::class => App\Handler\XssPageFactory::class,
+//            App\Handler\Form\AddComment::class => App\Handler\Form\AddCommentFactory::class,
         ],
     ],
 ];

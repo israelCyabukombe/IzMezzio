@@ -17,6 +17,10 @@ class CsrfPage implements RequestHandlerInterface
      */
     private $renderer;
 
+    /**
+     * CsrfPage constructor.
+     * @param TemplateRendererInterface $renderer
+     */
     public function __construct(TemplateRendererInterface $renderer)
     {
         $this->renderer = $renderer;
