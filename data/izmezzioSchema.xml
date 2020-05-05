@@ -1,0 +1,15 @@
+CREATE TABLE `article` (
+	`id` int PRIMARY KEY AUTO_INCREMENT,
+	`title` text NOT NULL,
+	`author` varchar(125) NOT NULL,
+	`content` text NOT NULL,
+	`date_created` datetime NOT NULL
+);
+
+CREATE TABLE `comment` (
+	`id` int PRIMARY KEY AUTO_INCREMENT,
+	`article_id` int (11) NOT NULL,
+	`name` varchar(100) NOT NULL,
+	`comment` text NOT NULL,
+	`date_entered` datetime NOT NULL
+);
