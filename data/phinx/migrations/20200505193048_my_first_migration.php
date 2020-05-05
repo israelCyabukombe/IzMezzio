@@ -5,7 +5,9 @@ declare(strict_types=1);
 use Phinx\Migration\AbstractMigration;
 
 /**
- * Class MyFirstMigration
+ * Class Tag
+ *
+ * This is for taging names of people to articles
  *
  * @author Israel Cyabukombe
  */

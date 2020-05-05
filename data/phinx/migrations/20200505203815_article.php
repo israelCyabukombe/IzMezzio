@@ -6,6 +6,8 @@ use Phinx\Db\Adapter\MysqlAdapter;
 /**
  * Class Article
  *
+ * This will hold the articles that go on XSS-Page
+ *
  */
 class Article extends AbstractMigration
 {

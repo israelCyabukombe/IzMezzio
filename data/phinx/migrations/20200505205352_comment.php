@@ -5,6 +5,8 @@ use Phinx\Db\Adapter\MysqlAdapter;
 
 /**
  * Class Comment
+ *
+ * This will hold the comments that people make on articles
  */
 class Comment extends AbstractMigration
 {
