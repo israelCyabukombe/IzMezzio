@@ -13,6 +13,9 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    \DoctrineModule\ConfigProvider::class,
+    \Laminas\Cache\ConfigProvider::class,
+    \Laminas\Paginator\ConfigProvider::class,
     \Laminas\Form\ConfigProvider::class,
     \Laminas\Hydrator\ConfigProvider::class,
     \Laminas\InputFilter\ConfigProvider::class,
@@ -23,6 +26,7 @@ $aggregator = new ConfigAggregator([
     \Laminas\Router\ConfigProvider::class,
     \Laminas\Validator\ConfigProvider::class,
     \Laminas\I18n\ConfigProvider::class,
+    \Laminas\Db\ConfigProvider::class,
     // Include cache configuration
     new ArrayProvider($cacheConfig),
 
