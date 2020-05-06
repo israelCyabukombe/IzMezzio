@@ -40,6 +40,7 @@
     "require": {
         "php": "^7.1",
         "doctrine/doctrine-module": "^4.0",
+        "doctrine/doctrine-orm-module": "^3.0",
         "laminas/laminas-component-installer": "^2.1.2",
         "laminas/laminas-config": "^3.3",
         "laminas/laminas-config-aggregator": "^1.2",
